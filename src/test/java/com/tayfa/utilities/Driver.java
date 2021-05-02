@@ -9,7 +9,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-
     static WebDriver driver;
 
     public static WebDriver getDriver(){

@@ -1,0 +1,111 @@
+TestNG Dersleri - 1. Ders
+Framework oluşturma
+
+-----TestNG ihtiyacımız olan kütüphaneler
+
+* Selenium-Java
+	selenium-java
+* WebDriverManager
+	webdrivermanager
+* TestNG
+	testng
+
+ConfigurationReader.getProperty("browser")
+===> chrome
+
+ConfigurationReader.getProperty("engineer")
+===> hamza
+
+Driver.getDriver();
+
+
+**************************
+TestNG Dersleri - 2. Ders
+**************************
+
+
+Driver.getDriver(); ---> Tarayıcımız
+
+.get("sayfaAdresi") -> istedilen sayfaya gitme
+
+.quit() -> Tarayıcıyı kapatır (açık olan tüm sekmelerle beraber)
+
+.close() -> Üzerinde bulunduğumuz, açık sekmeyi kapatmak için kullanılır.
+
+.getTitle() -> Üzerinde bulunduğumuz sayfanın başlığını getirir.
+
+.navigate().to -> İstediğimiz sayfaya yönlendiriyor (.get() methodu gibi)
+
+.navigate().back() -> Bir önceki sayfaya götürür.
+
+.navigate().forward() -> Geri geldiğimiz sayfaya götürür.
+
+.navigate().refresh() -> Sayfayı yeniler
+
+
+***** navigate -> sayfa geçmişimiz ve çerezlerimiz(cookies) oluyor.
+	- ileri, geri gidebiliriz.
+
+***** get -> herhangi bir geçmiş ya da çerez(cookies) yok.
+
+aramaKutusu  -> yaz -> kulaklık
+araButonu    -> tıkla
+urunListesi  -> tıkla
+fiyatBilgisi -> yazdir
+
+
+<div class="baslik" id="title">		--> tag açma
+	Hamza Yılmaz					--> içerik
+</div>	     						--> tag kapatma
+
+
+tag ismi : div
+attribute : class ve id
+içerik : Hamza Yılmaz
+
+
+<a href="http://amazon.com/hediye" class="link">
+	Hediye
+</a>
+
+tag ismi : a
+attribute : href, class
+içerik : Hediye
+
+<div id="icerik" class="makale">
+
+	<div class="baslik">Hamza Yılmaz</div>
+
+	<div class="yazi">
+		You are on amazon.com. You can also shop on Amazon Turkey for millions of products with fast local delivery. Click here to go to amazon.com.tr
+	</div>
+
+</div>
+
+
+tag ismi : div
+attribute : id, class
+id attribute'nun değeri : icerik
+class attribute'nun değeri : makale
+
+icerik elementinin 2 tane child'ı var. bunlar;
+	<div class="baslik">
+	<div class="yazi">
+
+baslik elementi parent'ı vardır. bu;
+	<div id="icerik" class="makale">
+
+baslik ve yazi elementi de kardeş elementlerdir.
+
+
+
+
+
+
+
+
+
+
+
+
+
