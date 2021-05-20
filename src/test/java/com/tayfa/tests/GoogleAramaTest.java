@@ -18,6 +18,8 @@ public class GoogleAramaTest {
         // Driver'ı başlatır ve google'a gider.
         Driver.getDriver().get("https://www.amazon.com");
 
+        WebElement aramaKutusu2 = Driver.getDriver().findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+
         WebElement aramaKutusu = Driver.getDriver().findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("telefon");
 

@@ -18,11 +18,7 @@ ConfigurationReader.getProperty("engineer")
 
 Driver.getDriver();
 
-
-**************************
 TestNG Dersleri - 2. Ders
-**************************
-
 
 Driver.getDriver(); ---> Tarayıcımız
 
@@ -96,6 +92,263 @@ baslik elementi parent'ı vardır. bu;
 	<div id="icerik" class="makale">
 
 baslik ve yazi elementi de kardeş elementlerdir.
+
+
+TestNG 3. Ders
+
+<a href="https://google.com">Google</a>
+
+<input id="twotabsearchtextbox" class="nav-input" name="kutu">
+
+Locators
+
+1. id
+2. name
+3. className
+4. tagName
+5. linkText         (a elementi)
+6. partialLinkText  (a elementi)
+7. xpath 		-> Tüm elementler
+8. cssSelector  -> CSS Değerleri
+
+
+<a id="askATFLink" class="a-link-normal askATFLink" href="#Ask">
+<span class="a-size-base">
+50 answered questions
+</span>
+</a>
+
+
+-> id, className, tagName, linkText, partialLinkText, xpath, cssSelector
+
+
+
+<input id="buy-now-button" name="submit.buy-now" data-hover="Select <b>__dims__" class="a-button-input" type="submit" aria-labelledby="submit.buy-now-announce">
+
+1. id
+2. name
+3. className
+4. tagName
+5. xpath
+6. cssSelector (class ve id)
+
+.findElement(By.id("buy-now-button"))
+
+.findElement(By.name("submit.buy-now"))
+
+.findElement(By.className("a-button-input"))
+
+.findElement(By.tagName("input"))
+
+.findElement(By.xpath("....."))
+
+.findElement(By.cssSelector("...."))
+
+
+
+
+**********************************
+
+Driver.getDriver().
+	=> findElement(By.locatorTuru)
+		***** sadece 1 tane
+
+	=> findElements(By.locatorTur)
+		***** tüm elementleri, liste şeklinde
+
+
+
+
+WebElement aramaKutusu =  findElement(By.locatorTuru)
+
+
+#twotabsearchtextbox ---> id
+.class-degeri		 ---> class
+
+
+<span class="base" id="kutu">
+50 answered questions
+</span>
+
+className
+cssSelector
+
+findElement(By.className("base"))
+findElement(By.cssSelector(".base"))
+
+findElement(By.id("kutu"))
+findElement(By.cssSelector("#kutu"))
+
+---------------------------------
+
+sendKeys("yazi") --> yazi eklemek
+getText()        --> içerdiği yazıyı getirir.
+
+TestNG Dersleri - 4. Ders
+
+xpath : herhangi bir webelementi bulabilmemiz için kullanılan en yaygın locator.
+	***** bir array gibi kullanılabiliyor.
+	***** webelementin içerdiği yazıya göre element bulmaya yardımcı oluyor.
+
+
+cssSelector : bir webelementin class, id gibi css'te kullandığımız selectorler yardımıyla bir webelementi bulmamıza yardımcı oluyor.
+	***** Genellikle sadece class değerleri içerisinde arama gerçekleştireceksek kullanılıyor.
+
+
+<a class="link google" href="https://google.com">
+	Google
+</a>
+
+1 - ID         		Hayır
+2 - Name       		Hayır
+3 - ClassName 		Hayır
+
+
+8 - CssSelector 	Evet
+	.link.google
+
+
+
+<div class="w3-clear" id="yazi">
+
+</div>
+
+tagName : div
+
+cssSelector("div")
+
+cssSelector(".w3-clear")
+
+cssSelector("div.w3-clear")
+
+cssSelector("#yazi")
+
+cssSelector("div#yazi.w3-clear")
+
+
+<div class="baslik logo">
+</div>
+
+cssSelector("div")
+
+cssSelector(".baslik")
+
+cssSelector(".logo")
+
+cssSelector(".baslik.logo")
+
+cssSelector("div.baslik.logo")
+
+
+<div class="icerik">
+	<span class="yazi">
+		Selamlar
+	</span>
+</div>
+
+cssSelector("span")
+
+cssSelector(".yazi")
+
+cssSelector("span.yazi")
+
+cssSelector(".icerik .yazi")
+
+cssSelector("div span")
+
+cssSelector("div.icerik span.yazi")
+
+xpath
+
+//tagName[@attribute="deger"]
+
+<a href="/colors/colors_picker.asp">
+	<img src="/images/colorpicker.gif" alt="colorpicker">
+</a>
+
+tagName         -> EVET
+id              -> HAYIR
+name            -> HAYIR
+className       -> HAYIR
+linkText 		-> HAYIR
+partialLinkText -> HAYIR
+xpath			-> EVET
+cssSelector     -> EVET
+
+
+xpath özel durumlar
+
+//tagName[@attribute="deger"]
+
+//tagName[.="deger"]
+
+//tagName[@attribute1="deger1" or @attribute2="deger2"]
+
+//*[.="yazi"]
+
+//*[contains(text(),"Hamza")]
+
+
+
+Davranışsal Sorular
+Sorularla Java Tekrarı
+Selenium-Advance Selenium (JUnit, TestNG, Cucumber)
+ISTQB Hazırlık
+Scrum Guide
+3 aşamalı Interview
+Sorularla API
+Sorularla SQL
+Sorularla JDBC + Jenkins + Selenium Grid
+Konu Anlatımı : Git-Github
+Konu Anlatımı : HTML / CSS
+İş Başvuru Takibi
+Birebir Takip
+Mentör Desteği - Süreç Takibi
+
+
+
+
+
+
+
+
+// JavaScript Tarih(Date) kullanımı
+var Kisi = function(isim, tarih){
+  this.isim = isim;
+  this.tarih = tarih;
+
+  this.yas = function(){
+    var tarih = new Date();
+    var dogumTarihi = new Date(this.tarih);
+
+    var fark = tarih.getFullYear() - dogumTarihi.getFullYear();
+
+    return fark;
+  }
+
+  this.oyKullanabilirMi = function(){
+    if(this.yas() > 18){
+        return true;
+    }
+    else{
+        return false;
+    }
+  }
+}
+
+
+var hamza = new Kisi("Hamza", "1990-11-15");
+
+console.log(hamza.yas());
+console.log(hamza.oyKullanabilirMi());
+
+
+
+
+
+
+
+
 
 
 
