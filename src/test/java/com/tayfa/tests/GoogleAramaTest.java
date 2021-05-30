@@ -1,9 +1,8 @@
 package com.tayfa.tests;
 
+import com.tayfa.pages.AmazonPage;
 import com.tayfa.utilities.Driver;
-import com.tayfa.utilities.ReusableMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 

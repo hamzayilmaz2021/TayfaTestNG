@@ -341,24 +341,3 @@ var hamza = new Kisi("Hamza", "1990-11-15");
 
 console.log(hamza.yas());
 console.log(hamza.oyKullanabilirMi());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
